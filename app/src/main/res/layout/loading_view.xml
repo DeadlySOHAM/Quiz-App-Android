@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading_panel"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="#5555"
+    android:visibility="gone">
+
+    <ProgressBar
+        android:id="@+id/loadingProgressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:animation="@anim/rotate"/>
+
+</FrameLayout>

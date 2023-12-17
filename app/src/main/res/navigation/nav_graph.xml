@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="soham.quiz_app.fragments.splash.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="soham.quiz_app.fragments.login_signup.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_SignUp_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="soham.quiz_app.fragments.dashboard.Dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/dashboard"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_dashboard_to_result"
+            app:destination="@id/result" />
+        <action
+            android:id="@+id/action_dashboard_to_exam"
+            app:destination="@id/exam"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboard_to_createTest"
+            app:destination="@id/createTest" />
+        <action
+            android:id="@+id/action_dashboard_to_addStudents"
+            app:destination="@id/addStudents" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="soham.quiz_app.fragments.login_signup.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/result"
+        android:name="soham.quiz_app.fragments.result.Result"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/exam"
+        android:name="soham.quiz_app.fragments.exam.Exam"
+        android:label="fragment_exam"
+        tools:layout="@layout/fragment_exam" />
+    <fragment
+        android:id="@+id/createTest"
+        android:name="soham.quiz_app.fragments.create_test.CreateTest"
+        android:label="fragment_create_test"
+        tools:layout="@layout/fragment_create_test" />
+    <fragment
+        android:id="@+id/addStudents"
+        android:name="soham.quiz_app.fragments.add_students.AddStudents"
+        android:label="fragment_add_students"
+        tools:layout="@layout/fragment_add_students" >
+        <argument
+            android:name="quiz_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addStudents_to_result"
+            app:destination="@id/result" />
+    </fragment>
+</navigation>
